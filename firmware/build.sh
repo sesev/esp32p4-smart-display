@@ -6,7 +6,7 @@ WORKSPACE="$(dirname "$SCRIPT_DIR")"
 
 podman run --rm \
   -v "${WORKSPACE}:/workspace:z" \
-  -w /workspace/concept \
+  -w /workspace/firmware \
   -e IDF_TARGET=esp32p4 \
   localhost/concept_idf:latest \
   build "$@"
