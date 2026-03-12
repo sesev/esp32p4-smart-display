@@ -8,6 +8,7 @@ firmware/sdkconfig
 # Secrets — never commit these
 firmware/config.env
 firmware/portal_test/config.json
+firmware/main/config/local_config.h
 
 # Python cache
 __pycache__/
