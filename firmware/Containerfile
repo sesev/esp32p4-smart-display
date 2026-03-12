@@ -1,0 +1,14 @@
+FROM docker.io/espressif/idf:v5.4
+
+RUN apt-get update && apt-get install -y git python3-pip usbutils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Pre-download esp32p4 toolchain inside the image
+RUN . /opt/esp/idf/export.sh \
+    && idf.py --preview set-target esp32p4 2>/dev/null || true
+
+WORKDIR /workspace/concept
+
+# Source IDF environment before every idf.py call
+ENTRYPOINT ["/bin/bash", "-c", \
+    "source /opt/esp/idf/export.sh --no-hints >/dev/null 2>&1 && idf.py \"$@\"", "--"]

@@ -1,0 +1,11 @@
+services:
+  idf:
+    build: .
+    volumes:
+      # Mount parent so ../1-Demo/... relative paths in CMakeLists resolve
+      - ..:/workspace
+    working_dir: /workspace/concept
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    environment:
+      - IDF_TARGET=esp32p4

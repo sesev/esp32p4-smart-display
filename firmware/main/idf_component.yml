@@ -1,0 +1,9 @@
+dependencies:
+  lvgl/lvgl:
+    version: "9.5.*"
+    public: true
+  espressif/esp_hosted:
+    version: ">=2.0.0"
+  espressif/esp_wifi_remote:
+    version: "*"
+  # esp_mqtt is built into ESP-IDF — no external dependency needed

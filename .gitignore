@@ -1,0 +1,24 @@
+# ESP-IDF build artifacts
+firmware/build/
+firmware/build.old/
+firmware/managed_components/
+firmware/dependencies.lock
+firmware/sdkconfig
+
+# Secrets — never commit these
+firmware/config.env
+firmware/portal_test/config.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Binary firmware blobs
+*.bin
+*.elf
+*.map
+
+# OS
+.DS_Store
+Thumbs.db
